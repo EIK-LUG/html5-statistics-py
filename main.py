@@ -39,7 +39,7 @@ def get_html(url):
     except UnicodeDecodeError:
         return "Unable to decode, not utf-8"
     except Exception as e:
-        return "Some other error: " + e
+        return "Some other error: " + str(e)
 
 
 def contains_html5(url):
