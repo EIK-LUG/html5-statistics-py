@@ -1,5 +1,3 @@
-__author__ = 'kristo'
-
 from urllib.request import urlopen, URLError
 from socket import timeout
 import json
@@ -11,7 +9,7 @@ HTML5_TAGS = ["<!DOCTYPE_html", "<audio", "<video", "<article", "<header", "<foo
               "<progress", "<rp", "<rt", "<ruby", "<section", "<summary", "<time", "<wbr", "<datalist", "<keygen",
               "<output", "<svg", "<embed", "<source", "<track", "<video"]
 
-REPORT = {}
+report = {}
 
 
 def get_urls(file):
@@ -61,6 +59,6 @@ if __name__ == "__main__":
     #Modest sample size of 100 urls
     for url in urls[0:100]:
         print("url:" + str(url_nr) + "/" + str(nr_of_urls))
-        REPORT[url] = contains_html5(url)
+        report[url] = contains_html5(url)
         url_nr += 1
-    json.dump(REPORT, open("report", "w"), sort_keys=True, indent=4, separators=(',', ': '))
+    json.dump(report, open("report", "w"), sort_keys=True, indent=4, separators=(',', ': '))
